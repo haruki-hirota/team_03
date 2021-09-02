@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <h1>興味がある部分を選択してください</h1>
+</head>
+<div class="zukei" id="target">
+   <canvas id="cv2" width="1000" height="1000"></canvas>
+   <p>python</p>
+   <h4>flask<h4>
+   <h3>web開発</h3>
+</div>
+
+<style>
+    .zukei{
+        position: relative;
+    }
+    .zukei p{
+        position:absolute;
+        top: 30%;
+        left: 30%;
+        color:teal;
+    }
+
+    .zukei h4{
+        position:absolute;
+        top: 10%;
+        left: 43%;
+        color:teal;
+    }
+
+    .zukei h3{
+        position:absolute;
+        top: 3%;
+        left: 43%;
+        color:teal;
+    }
+</style>
+
+
+<script>
+    var ctx2 = document.getElementById("cv2").getContext("2d");
+
+    ctx2.fillStyle = "rgba(255, 0, 0, 0.5)"; //不透明度0.5、赤で塗り潰し
+    ctx2.fillRect(500,20,160,160);
+    ctx2.fillStyle = "rgba(0, 255, 0, 0.5)"; //不透明度0.5、緑で塗り潰し
+    ctx2.fillRect(350,80,300,300);
+    ctx2.fillStyle = "blue"; //青で塗り潰し
+    ctx2.globalAlpha = 0.7;  //不透明度を0.5に指定
+    ctx2.fillRect(600,70,160,160);
+
+    document.getElementById("target").onclick=function(event){
+        var x=event.pageX;
+        var y=event.pageY;
+        console.log(x)
+        console.log(y)
+        if(512<x && x<608 && y<268 && y>=170){
+            document.location='https://flask.palletsprojects.com/en/2.0.x/';
+        } if(x<512){
+            alert("失敗")
+        } if(608<x){
+            alert("失敗")
+        }
+    }
+    // && 172<y<266
+</script>
+</section>
